@@ -7,19 +7,25 @@ version '0.0.1-SNAPSHOT'
 ext {
     junitJupiterVersion = '5.8.1'
     assertjVersion = '3.24.2'
+    guavaVersion= '31.1-jre'
+    commonsLang3 ='3.12.0'
 }
 
 repositories {
-    maven { url 'https://maven.aliyun.com/repository/jcenter' }
-    maven { url 'https://maven.aliyun.com/repository/google' }
-    maven { url 'https://maven.aliyun.com/repository/central' }
-    maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    maven { url 'https://maven.aliyun.com/repository/google/' }
+    maven { url 'https://maven.aliyun.com/repository/jcenter/' }
+    mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
-    implementation "org.assertj:assertj-core:$assertjVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion"
+    testImplementation "org.assertj:assertj-core:$assertjVersion"
+    implementation "com.google.guava:guava:$guavaVersion"
+    implementation "org.apache.commons:commons-lang3:$commonsLang3"
 }
 
 test {
