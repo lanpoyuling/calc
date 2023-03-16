@@ -1,8 +1,7 @@
 package org.example;
 
 
-import org.example.constant.CalcConstant;
-import org.junit.jupiter.api.Test;
+import org.example.constant.CalcSymbolConstant;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -25,10 +24,10 @@ class OperatorSymbolEnumTest {
 
     public static Stream<Arguments> data() {
         return Stream.of(
-                Arguments.of(CalcConstant.ADD_SYMBOL, "AddCal"),
-                Arguments.of(CalcConstant.SUBTRACT_SYMBOL, "SubtractCal"),
-                Arguments.of(CalcConstant.MULTIPLY_SYMBOL, "MultiplyCal"),
-                Arguments.of(CalcConstant.DIVIDE_SYMBOL, "DivideCal")
+                Arguments.of(CalcSymbolConstant.ADD, "AddCal"),
+                Arguments.of(CalcSymbolConstant.SUBTRACT, "SubtractCal"),
+                Arguments.of(CalcSymbolConstant.MULTIPLY, "MultiplyCal"),
+                Arguments.of(CalcSymbolConstant.DIVIDE, "DivideCal")
         );
     }
 }

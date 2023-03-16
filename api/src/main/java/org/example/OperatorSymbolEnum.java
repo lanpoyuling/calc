@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.constant.CalcConstant;
+import org.example.constant.CalcSymbolConstant;
 
 import java.util.Objects;
 
@@ -9,10 +9,10 @@ import java.util.Objects;
  * 意图借助本类 + 反射 生成对象
  */
 public enum OperatorSymbolEnum {
-    ADD("AddCal", CalcConstant.ADD_SYMBOL),
-    SUBTRACT("SubtractCal", CalcConstant.SUBTRACT_SYMBOL),
-    MULTIPLY("MultiplyCal", CalcConstant.MULTIPLY_SYMBOL),
-    DIVIDE("DivideCal", CalcConstant.DIVIDE_SYMBOL);
+    ADD("AddCal", CalcSymbolConstant.ADD),
+    SUBTRACT("SubtractCal", CalcSymbolConstant.SUBTRACT),
+    MULTIPLY("MultiplyCal", CalcSymbolConstant.MULTIPLY),
+    DIVIDE("DivideCal", CalcSymbolConstant.DIVIDE);
     /**
      * 计算类名称
      */

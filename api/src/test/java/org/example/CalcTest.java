@@ -64,6 +64,8 @@ public class CalcTest {
                 Arguments.of("10 / 3 = ", "3.3333333333333333333333333333333"),
 
                 Arguments.of("10 / 2.5 =    ", "4"),
+                //测试不在工厂中注册的类型
+                Arguments.of("10 & 2.5 =    ", "4"),
                 //TODO  如何与异常捕获结合
                 Arguments.of("10 / 0   =", "除数不能为0")
         );
