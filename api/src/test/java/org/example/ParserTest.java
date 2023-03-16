@@ -1,6 +1,7 @@
 package org.example;
 
 
+import org.example.constant.CalcConstant;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -8,7 +9,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.example.Parser.*;
 
 class ParserTest {
     /**
@@ -18,15 +18,15 @@ class ParserTest {
      */
     public static Stream<Arguments> data() {
         return Stream.of(
-                Arguments.of("7 + 7 = ", new String[]{"7", ADD_SYMBOL, "7"}),
-                Arguments.of("7 + 7.5 = ", new String[]{"7", ADD_SYMBOL, "7.5"}),
-                Arguments.of(" 9 - 1.5 = ", new String[]{"9", SUBTRACT_SYMBOL, "1.5"}),
-                Arguments.of(" 9 - 1 = ", new String[]{"9", SUBTRACT_SYMBOL, "1"}),
-                Arguments.of(" 9 * 1 = ", new String[]{"9", MULTIPLY_SYMBOL, "1"}),
-                Arguments.of(" 9 * 1.2 =  ", new String[]{"9", MULTIPLY_SYMBOL, "1.2"}),
-                Arguments.of(" 10 / 2.5 =   ", new String[]{"10", DIVIDE_SYMBOL, "2.5"}),
-                Arguments.of("  10 / 1 =    ", new String[]{"10", DIVIDE_SYMBOL, "1"}),
-                Arguments.of("  10 / 0 =    ", new String[]{"10", DIVIDE_SYMBOL, "0"})
+                Arguments.of("7 + 7 = ", new String[]{"7", CalcConstant.ADD_SYMBOL, "7"}),
+                Arguments.of("7 + 7.5 = ", new String[]{"7", CalcConstant.ADD_SYMBOL, "7.5"}),
+                Arguments.of(" 9 - 1.5 = ", new String[]{"9", CalcConstant.SUBTRACT_SYMBOL, "1.5"}),
+                Arguments.of(" 9 - 1 = ", new String[]{"9", CalcConstant.SUBTRACT_SYMBOL, "1"}),
+                Arguments.of(" 9 * 1 = ", new String[]{"9", CalcConstant.MULTIPLY_SYMBOL, "1"}),
+                Arguments.of(" 9 * 1.2 =  ", new String[]{"9", CalcConstant.MULTIPLY_SYMBOL, "1.2"}),
+                Arguments.of(" 10 / 2.5 =   ", new String[]{"10", CalcConstant.DIVIDE_SYMBOL, "2.5"}),
+                Arguments.of("  10 / 1 =    ", new String[]{"10", CalcConstant.DIVIDE_SYMBOL, "1"}),
+                Arguments.of("  10 / 0 =    ", new String[]{"10", CalcConstant.DIVIDE_SYMBOL, "0"})
         );
     }
 
