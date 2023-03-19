@@ -13,9 +13,7 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 class GsonManagerTest {
     /**
      * 只创建一个Gson对象
-     * 测试未通过
      */
-
     @Test
     void test_singleton_gson() {
         int count = 0;
