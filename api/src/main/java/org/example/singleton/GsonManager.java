@@ -15,7 +15,7 @@ public class GsonManager {
      */
     private static volatile GsonManager INSTANCE;
 
-    private static volatile Gson gson;
+    private static  Gson gson;
 
     private GsonManager() {
         gson = new Gson();
@@ -24,11 +24,6 @@ public class GsonManager {
     public static GsonManager getInstance() {
         if (INSTANCE == null) {
             synchronized (GsonManager.class) {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    log.info("{},{}",e,e.getMessage());
-                }
                 //（1给指令申请内存2成员变量初始化3.内存内容赋值给INSTANCE）
                 INSTANCE = new GsonManager();
             }

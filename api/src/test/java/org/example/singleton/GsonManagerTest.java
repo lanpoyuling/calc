@@ -13,23 +13,12 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 class GsonManagerTest {
     /**
      * 只创建一个Gson对象
+     * 测试未通过
      */
+
     @Test
     void test_singleton_gson() {
-        AtomicInteger count = new AtomicInteger(0);
-        for (int i = 1; i <= 100; i++) {
-            int hashCode = GsonManager.getInstance().getGson().hashCode();
-            new Thread(() -> {
-                count.incrementAndGet();
-                log.info("hashCode:{}", hashCode);
-            }).start();
-        }
-        assertThat(count.get()).isEqualTo(100);
-    }
-    @Test
-    void test_singleton_gson_2() {
         int count = 0;
-
         CopyOnWriteArrayList copyOnWriteArrayList = new CopyOnWriteArrayList<>();
         for (int i = 1; i <= 100; i++) {
             int hashCode = GsonManager.getInstance().getGson().hashCode();
@@ -39,7 +28,7 @@ class GsonManagerTest {
             }).start();
             count++;
         }
-        log.info("{}",count);
+        assertThat(count).isEqualTo(100);
         assertThat(copyOnWriteArrayList.size()).isEqualTo(100);
     }
 
