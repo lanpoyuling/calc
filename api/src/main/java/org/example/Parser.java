@@ -10,6 +10,8 @@ import java.util.Iterator;
  * 四则运算式子解析器
  */
 public class Parser {
+    public static final String INPUT_INFORMATION_IS_EMPTY = "输入信息为空";
+
 
     /**
      * 解析方法
@@ -20,7 +22,7 @@ public class Parser {
     public static String[] parseStr(String input) {
         String[] result = new String[3];
         if (StringUtils.isBlank(input)) {
-            throw new DataException("输入信息为空");
+            throw new DataException(INPUT_INFORMATION_IS_EMPTY);
         }
         //除去前后空格
         String trim = StringUtils.trim(input);

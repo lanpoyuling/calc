@@ -20,6 +20,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Slf4j
 public class OperationStrategyFactory {
+    /**
+     * 未知的运算符类型
+     */
+    public static final String UNKNOWN_OPERATOR_TYPE = "未知的运算符类型";
 
 
     /**
@@ -58,7 +62,7 @@ public class OperationStrategyFactory {
         }
 
         if (!symbolExist) {
-            throw new UnregisteredException("未知的运算符类型");
+            throw new UnregisteredException(UNKNOWN_OPERATOR_TYPE);
         }
         return operatorSymbolObj.get(operatorSymbol);
     }
