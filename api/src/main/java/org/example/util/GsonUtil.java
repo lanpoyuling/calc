@@ -1,28 +1,18 @@
 package org.example.util;
 
-import com.google.gson.Gson;
+import org.example.singleton.GsonManager;
 
-import java.util.Enumeration;
-
+/**
+ * Gson工具类
+ */
 public class GsonUtil {
-
-
     /**
-     * 构建Gson
+     * 将对象转化为String
      *
+     * @param t 任意对象
      * @return
      */
-    private static Gson buildGson() {
-        return new Gson();
-    }
-
-    public static Gson get(){
-        return buildGson();
-    }
-
-
-
-    public static  String toJson(Enumeration<String> enumeration){
-        return buildGson().toJson(enumeration);
+    public static <T> String toJson(T t) {
+        return GsonManager.getInstance().getGson().toJson(t);
     }
 }

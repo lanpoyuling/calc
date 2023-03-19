@@ -7,6 +7,7 @@ import org.example.calc.DivideCal;
 import org.example.calc.MultiplyCal;
 import org.example.calc.SubtractCal;
 import org.example.constant.CalcSymbolConstant;
+import org.example.util.GsonUtil;
 import org.exception.UnregisteredException;
 
 import java.util.Enumeration;
@@ -49,7 +50,7 @@ public class OperationStrategyFactory {
         boolean symbolExist = Boolean.FALSE;
         //map 已注册的类型集合（运算符）
         Enumeration<String> registeredSymbolList = operatorSymbolObj.keys();
-        log.info("已注册的类型集合:{}", registeredSymbolList);
+        log.info("已注册的类型集合:{}", GsonUtil.toJson(registeredSymbolList));
         for (Enumeration<String> symbol = registeredSymbolList; registeredSymbolList.hasMoreElements(); ) {
             if (operatorSymbol.equals(symbol.nextElement())) {
                 symbolExist = Boolean.TRUE;
